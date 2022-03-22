@@ -1,0 +1,61 @@
+@use "../vars";
+@use "../mixins";
+
+.star-icon {
+  &._color_main {
+    fill: vars.$mainStarColor
+  }
+
+  &._color_second {
+    fill: vars.$secondStarColor;
+  }
+}
+
+.skills {
+
+  &__info {
+    text-align: center;
+    margin: 3.5rem 0 4.5rem;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    .skills__skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .skills-item__img {
+        aspect-ratio: 1/1;
+        width: 4rem;
+      }
+
+      .skills-item__name {
+        font-size: vars.$xsFontSize;
+        color: vars.$subTextColor;
+        font-weight: 700;
+        text-align: center;
+        margin: 1rem 0 2rem;
+        flex: 1 1 auto;
+      }
+
+      .skills-item__lvl{
+        display: flex;
+        gap: .5rem;
+      }
+    }
+  }
+}
+
+
+@include mixins.media(sm){
+  .skills{
+    &__items{
+      justify-content: center;
+    }
+  }
+}

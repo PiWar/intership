@@ -1,0 +1,58 @@
+@use "../vars";
+@use "../mixins";
+
+.portfolio {
+  &__title{
+    margin-bottom: 2rem;
+  }
+
+  &__items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.5rem;
+
+    &-img{
+      aspect-ratio: 1.8/1;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    &-name{
+      font-size: vars.$mainFontSize;
+      color: vars.$mainTextColor;
+      transition: color .3s ease-in;
+
+      &:hover{
+        color: vars.$subTextColor;
+      }
+    }
+  }
+}
+
+@include mixins.media(sm){
+  .portfolio {
+    &__item{
+      &-name{
+        font-size: vars.$smFontSize;
+
+      }
+    }
+  }
+}
+
+@include mixins.media(xs){
+  .portfolio {
+    &__item{
+      row-gap: 1rem;
+      &-name{
+        font-size: vars.$xsFontSize;
+      }
+    }
+  }
+}

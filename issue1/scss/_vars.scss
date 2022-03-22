@@ -1,0 +1,46 @@
+// region color
+
+$mainTextColor: #000;
+$subTextColor: #828282;
+$headerBorderColor: #828282;
+$secondBlockColor: #F6F6F6;
+$mainStarColor: #070707;
+$secondStarColor: #e5e5e5;
+$sendMessageBtnColor: #070707;
+$sendMessageBtnSubColor: #828282;
+$sendMessageBtnTextColor: white;
+
+// endregion
+
+// region padding
+
+$blockPaddingY: 5rem;
+$contentPaddingX: 1.5rem;
+
+// endregion
+
+// region width
+
+$contentMaxWidth: 50rem;
+
+// endregion
+
+// region font-size
+
+$xl2FontSize: 2.4rem;
+$xlFontSize: 1.75rem;
+$lgFontSize: none;
+$mainFontSize: .9rem;
+$smFontSize: .8rem;
+$xsFontSize: .7rem;
+
+// endregion
+
+// region breakpoints
+
+$breakpoints: (
+  xs: 425px,
+  sm: 767px
+);
+
+// endregion

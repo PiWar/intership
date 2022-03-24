@@ -1,15 +1,20 @@
-const html_tag = document.querySelector("html");
-const burger_menu = document.getElementById("burger-menu");
-const header_content = document.getElementById("header__content")
-const menu_items = header_content.querySelectorAll(".header__menu .menu-item")
+const burgerMenu = document.getElementById("burger-menu");
+const headerContent = document.getElementById("header__content")
+const menuItems = headerContent.querySelectorAll(".header__menu .menu-item")
+const body = document.body
+const mediaOpenBurgerMenu = 767
 
-function toggle_class() {
-    burger_menu.classList.toggle("active");
-    header_content.classList.toggle("active")
-    html_tag.classList.toggle("block-scroll")
+
+function toggleClass() {
+  if (body.offsetWidth <= mediaOpenBurgerMenu) {
+    // open menu and block scroll body
+    burgerMenu.classList.toggle("active");
+    headerContent.classList.toggle("active")
+    body.classList.toggle("block-scroll")
+  }
 }
 
-burger_menu.onclick = toggle_class
-Array.prototype.forEach.call(menu_items, item => {
-  item.addEventListener("click", toggle_class)
+burgerMenu.addEventListener("click", toggleClass)
+menuItems.forEach(item => {
+  item.addEventListener("click", toggleClass)
 })

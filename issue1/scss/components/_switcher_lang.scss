@@ -1,0 +1,31 @@
+@use "../vars";
+
+.switcher {
+  display: flex;
+  flex-direction: column;
+  row-gap: .25rem;
+  font-size: vars.$smFontSize;
+  font-weight: 700;
+  color: vars.$subTextColor;
+
+  &-sep {
+    width: 100%;
+    height: 3px;
+    background: #000;
+  }
+
+  &-lang {
+    line-height: vars.$smFontSize;
+    writing-mode: vertical-rl;
+    padding-left: .1rem;
+    cursor: pointer;
+    transition: color .3s ease-in;
+    &._rotate_180{
+      transform: rotateZ(180deg);
+    }
+    &.active {
+      color: vars.$mainTextColor;
+    }
+  }
+
+}

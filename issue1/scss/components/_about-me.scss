@@ -1,0 +1,17 @@
+@use "../vars";
+
+.about-me {
+  &__info {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+
+    p{
+      max-width: 25rem;
+      font-size: vars.$mainFontSize;
+      text-align: center;
+    }
+  }
+}

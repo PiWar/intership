@@ -81,7 +81,7 @@ function sortBubble(array) {
 }
 
 // массив чисел для сортировки выборкой
-const arrayForSortSelection = getRandomArray()
+const arrayForSortSelection = getRandomArray(5000)
 // копия массива для сортировки пузырьком
 const arrayForSortBubble = arrayForSortSelection.slice()
 

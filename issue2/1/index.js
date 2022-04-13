@@ -1,40 +1,38 @@
-const arrayFirst = prompt("first array").split(" ")
-const arraySecond = prompt("second array").split(" ")
+// массив в котором будет происходить поиск
+const arrayOfHaystack = prompt("first array").split(" ")
+// массив элементов для поиска
+const arrayOfNeedles = prompt("second array").split(" ")
+
+// сортируем входной массив для бинарного поиска
+arrayOfHaystack.sort((a, b) => a - b)
 
 /**
- * @param {string} a
- * @param {string} b
- * @return {number}
+ * поиск элемента в массиве
+ * @param {Number} needle - элемент, который будет искаться в массиве
+ * @param {Array} haystack - массив, в котором будет производиться поиск
+ * @return {Number} - индекс найденного элемента, иначе -1
  */
-const sortNumber = (a, b) => a - b // sort array of number
-
-arrayFirst.sort(sortNumber)
-
-/**
- * @param {number} el
- * @param {Array} array
- * @return string|boolean
- */
-// search el in array
-const binarySearch = (el, array) => {
-    if (array.length === 0) return false
-    let start = 0
-    let end = array.length - 1
-    while (start <= end) {
-        const middle = Math.floor((start + end) / 2)
-        if (+array[middle] === el) {
-            return true
+const binarySearch = (needle, haystack) => {
+    if (haystack.length === 0) return -1
+    let startPosition = 0
+    let endPosition = haystack.length - 1
+    while (startPosition <= endPosition) {
+        const middlePosition = Math.floor((startPosition + endPosition) / 2)
+        if (+haystack[middlePosition] === needle) {
+            return middlePosition
         }
-        if (array[middle] > el) {
-            end = middle - 1
+        if (haystack[middlePosition] > needle) {
+            endPosition = middlePosition - 1
         } else {
-            start = middle + 1
+            startPosition = middlePosition + 1
         }
     }
-    return false
+    return -1
 }
 
-arraySecond.forEach(el => {
-    const result = binarySearch(+el, arrayFirst)
-    console.log(el, result ? "Да" : "Нет")
+// проходимся по элементам для поиска
+arrayOfNeedles.forEach(needle => {
+    // получаем результат поиска
+    const result = binarySearch(+needle, arrayOfHaystack)
+    console.log(needle, result !== -1 ? "Да" : "Нет")
 })

@@ -92,8 +92,7 @@ const executionTimeBubbleSort = getFuncExecutionTime(() => sortBubble(arrayForSo
 
 if (executionTimeBubbleSort > executionTimeSelectionSort) {
     console.log("сортировка выборкой быстрее")
-    console.log(`selection sort: ${executionTimeSelectionSort} ms; bubble sort: ${executionTimeBubbleSort} ms`)
 } else {
     console.log("сортировка пузырьком быстрее")
-    console.log(`selection sort: ${executionTimeSelectionSort} ms; bubble sort: ${executionTimeBubbleSort} ms`)
 }
+console.log(`selection sort: ${executionTimeSelectionSort} ms; bubble sort: ${executionTimeBubbleSort} ms`)
